@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:splitwise/people_list.dart';
-import 'people_list.dart';
+import 'package:splitwise/global_variables.dart';
 
 class FriendsSettingsPage extends StatelessWidget {
   final Map<String, dynamic> people;

@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
             const BottomNavigationBarItem(icon: Icon(Icons.people, size: 25), label: 'Groups'),
             BottomNavigationBarItem(icon: Icon(Icons.add_box, size: 50, color: Theme.of(context).colorScheme.primary,), label: ''),
             const BottomNavigationBarItem(icon: Icon(Icons.auto_graph_rounded, size: 25), label: 'Activity'),
-            const BottomNavigationBarItem(icon: Icon(Icons.account_box_rounded, size: 25), label: 'Settings'),
+            const BottomNavigationBarItem(icon: Icon(Icons.account_box_rounded, size: 25), label: 'Account'),
           ]),
 
       body: IndexedStack(

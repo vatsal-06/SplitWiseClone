@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'people_list.dart';
+import 'global_variables.dart';
 import 'friends_settings_page.dart';
 
 class FriendsDetailsPage extends StatefulWidget {
