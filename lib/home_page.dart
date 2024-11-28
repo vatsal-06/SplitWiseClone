@@ -15,13 +15,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentPage = 0;
 
-  List<Widget> pages = const [
-    FriendsPage(),
-    GroupsPage(),
-    AddPage(),
-    ActivityPage(),
-    AccountPage()
-
+  List<Widget> pages = [
+    const FriendsPage(),
+    const GroupsPage(),
+    const AddPage(),
+    const ActivityPage(),
+    const AccountPage(people: {})
   ];
 
   @override

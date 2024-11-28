@@ -20,7 +20,7 @@ class FriendsSettingsPage extends StatelessWidget {
           Row(
             children: [
               const Icon(Icons.person),
-              Text(people['name'] as String, style: Theme.of(context).textTheme.titleMedium),
+              // Text(people['name'] as String, style: Theme.of(context).textTheme.titleMedium),
             ],
           )
         ],
