@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'friends_splitwise_material_page.dart';
+import 'home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const FriendsSplitWiseMaterialPage(),
+      home: const HomePage(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: const TextTheme(
@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
           titleSmall: TextStyle(fontSize: 14,)
         ).apply(),
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromRGBO(254, 206, 1, 1),
-          primary: const Color.fromRGBO(254, 206, 1, 1),
+          seedColor: const Color.fromRGBO(28, 139, 113, 1),
+          primary: const Color.fromRGBO(99, 199, 178, 1),
           ),
         inputDecorationTheme: const InputDecorationTheme(
           hintStyle: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 16),

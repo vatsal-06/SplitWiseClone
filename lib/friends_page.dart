@@ -1,24 +1,16 @@
 import 'package:flutter/material.dart';
 import 'friends_item.dart';
-import 'bottom_icon.dart';
 import 'people_list.dart';
 import 'friends_details_page.dart';
 
-class FriendsSplitWiseMaterialPage extends StatefulWidget {
-  const FriendsSplitWiseMaterialPage({super.key});
+class FriendsPage extends StatefulWidget {
+  const FriendsPage({super.key});
 
   @override
-  State<FriendsSplitWiseMaterialPage> createState() =>
-      _FriendsSplitWiseMaterialPageState();
+  State<FriendsPage> createState() => _FriendsPageState();
 }
 
-class _FriendsSplitWiseMaterialPageState
-    extends State<FriendsSplitWiseMaterialPage> {
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
+class _FriendsPageState extends State<FriendsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,15 +34,16 @@ class _FriendsSplitWiseMaterialPageState
               )),
         ],
       ),
+
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  'Overall, you owe \$1000',
+                  'You are all settled Up!',
                   style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -64,9 +57,11 @@ class _FriendsSplitWiseMaterialPageState
                 ),
               ],
             ),
+
             const SizedBox(
               height: 10,
             ),
+      
             Expanded(
               child: ListView.builder(
                   itemCount: people.length,
@@ -84,27 +79,33 @@ class _FriendsSplitWiseMaterialPageState
                         expense: people[index]['expense'] as String,
                       ),
                     );
-                  }),
-            )
-          ],
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.white,
-        child: ListView.builder(
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                print('Bottom bar icon pressed');
-              },
-              child: const BottomBarIconItem(
-                icon: Icons.home,
-                text: 'Home',
+                  }
+                  ),
+            ),
+      
+            const SizedBox(
+              height: 10,
+            ),
+      
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(250, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
               ),
-            );
-          },
-          itemCount: 5,
-          scrollDirection: Axis.horizontal,
+              onPressed: () {
+                print('Add Friends button pressed');
+              }, 
+              child: const Row(
+                children: [
+                  Icon(Icons.person_add_sharp),
+                  SizedBox(width: 8),
+                  Text('Add Friends'),
+                ],
+              )
+              )
+          ],
         ),
       ),
     );

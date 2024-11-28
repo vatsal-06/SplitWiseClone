@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'people_list.dart';
+import 'friends_settings_page.dart';
 
 class FriendsDetailsPage extends StatefulWidget {
   final Map<String, dynamic> people;
@@ -24,7 +25,12 @@ class _FriendsDetailsPageState extends State<FriendsDetailsPage> {
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
-              print('Settings icon pressed');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FriendsSettingsPage(people: widget.people),
+                ),
+              );
             },
           ),
         ],
