@@ -2,24 +2,20 @@ import 'package:flutter/material.dart';
 
 class BottomBarIconItem extends StatelessWidget {
   final IconData icon;
-  final Color iconColor;
-  final VoidCallback onTap;
+  final String text;
   const BottomBarIconItem({
     super.key,
     required this.icon,
-    required this.iconColor,
-    required this.onTap,
+    required this.text,
   });
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      icon: Icon(
-        icon,
-        size: 30,
-        color: iconColor,
-      ),
-      onPressed: onTap,
+    return Column(
+      children: [
+        Icon(icon),
+        Text(text),
+      ],
     );
   }
 }

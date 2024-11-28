@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:splitwise/groups_splitwise_material_page.dart';
 import 'friends_item.dart';
-import 'bottom_bar_icon_item.dart';
+import 'bottom_icon.dart';
+import 'people_list.dart';
+import 'friends_details_page.dart';
 
 class FriendsSplitWiseMaterialPage extends StatefulWidget {
   const FriendsSplitWiseMaterialPage({super.key});
@@ -9,10 +10,10 @@ class FriendsSplitWiseMaterialPage extends StatefulWidget {
   @override
   State<FriendsSplitWiseMaterialPage> createState() =>
       _FriendsSplitWiseMaterialPageState();
-
 }
 
-class _FriendsSplitWiseMaterialPageState extends State<FriendsSplitWiseMaterialPage> {
+class _FriendsSplitWiseMaterialPageState
+    extends State<FriendsSplitWiseMaterialPage> {
   @override
   void dispose() {
     super.dispose();
@@ -32,7 +33,8 @@ class _FriendsSplitWiseMaterialPageState extends State<FriendsSplitWiseMaterialP
         actions: [
           TextButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const GroupsSplitwiseMaterialPage()));
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => const GroupsSplitwiseMaterialPage()));
+                print('Add Friends button pressed');
               },
               child: const Text(
                 'Add Friends',
@@ -48,7 +50,7 @@ class _FriendsSplitWiseMaterialPageState extends State<FriendsSplitWiseMaterialP
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  'You are all setteld up!',
+                  'Overall, you owe \$1000',
                   style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -65,43 +67,46 @@ class _FriendsSplitWiseMaterialPageState extends State<FriendsSplitWiseMaterialP
             const SizedBox(
               height: 10,
             ),
-            const FriendsItem(
-                name: 'John Doe',
-                icon: Icon(Icons.person),
-                expense: 'You owe \$100'),
-            const FriendsItem(
-                name: 'Jane Doe',
-                icon: Icon(Icons.person),
-                expense: 'You owe \$200'),
-            const FriendsItem(
-                name: 'John Smith',
-                icon: Icon(Icons.person),
-                expense: 'You owe \$300'),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: people.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    FriendsDetailsPage(people: people[index])));
+                      },
+                      child: FriendsItem(
+                        name: people[index]['name'] as String,
+                        expense: people[index]['expense'] as String,
+                      ),
+                    );
+                  }),
+            )
           ],
         ),
       ),
-      bottomNavigationBar: const BottomAppBar(
+      bottomNavigationBar: BottomAppBar(
         color: Colors.white,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            // BottomBarIconItem(icon: Icons.person, iconColor: Colors.green, navigator: Navigator.pop(context),),
-            BottomBarIconItem(
-              icon: Icons.people_outline,
-              iconColor: Colors.grey,
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            return GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => GroupsSplitwiseMaterialPage(),));
+                print('Bottom bar icon pressed');
               },
-            ),
-            // BottomBarIconItem(icon: Icons.add_box, iconColor: Colors.green),
-            // BottomBarIconItem(icon: Icons.auto_graph, iconColor: Colors.grey),
-            // BottomBarIconItem(icon: Icons.account_circle_outlined, iconColor: Colors.grey),
-          ],
+              child: const BottomBarIconItem(
+                icon: Icons.home,
+                text: 'Home',
+              ),
+            );
+          },
+          itemCount: 5,
+          scrollDirection: Axis.horizontal,
         ),
       ),
     );
   }
 }
-
-
-
