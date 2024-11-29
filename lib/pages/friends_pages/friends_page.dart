@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../widgets/friends_item.dart';
-import '../global_variables.dart';
+import '../../widgets/friends_item.dart';
+import '../../global_variables.dart';
 import 'friends_details_page.dart';
 
 class FriendsPage extends StatefulWidget {

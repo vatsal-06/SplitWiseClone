@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:splitwise/pages/test_page.dart';
-import '../widgets/account_settings.dart';
+import 'account_settings.dart';
 
 class AccountPage extends StatefulWidget {
   final Map<String, dynamic> people;
@@ -130,6 +130,7 @@ class _AccountPageState extends State<AccountPage> {
                       ),
                 ),
               ),
+              
         
               const SizedBox(height: 25),
               const Padding(
