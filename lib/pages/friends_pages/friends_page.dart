@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:splitwise/pages/splitwise_pro_page.dart';
 import '../../widgets/friends_item.dart';
 import '../../global_variables.dart';
 import 'friends_details_page.dart';
@@ -19,7 +20,12 @@ class _FriendsPageState extends State<FriendsPage> {
           icon: const Icon(Icons.search),
           iconSize: 25,
           onPressed: () {
-            print("Search icon pressed");
+            setState(() {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SplitwiseProPage()));
+                  });
           },
         ),
         actions: [

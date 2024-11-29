@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:splitwise/pages/splitwise_pro_page.dart';
 
 class GroupsPage extends StatefulWidget {
   const GroupsPage({super.key});
@@ -20,7 +21,12 @@ class _GroupsPageState extends State<GroupsPage> {
           icon: const Icon(Icons.search),
           iconSize: 25,
           onPressed: () {
-            print("Search icon pressed");
+            setState(() {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SplitwiseProPage()));
+                  });
           },
         ),
         actions: [
