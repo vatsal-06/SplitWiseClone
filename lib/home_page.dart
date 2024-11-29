@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:splitwise/account_page.dart';
-import 'package:splitwise/activity_page.dart';
-import 'package:splitwise/add_page.dart';
-import 'package:splitwise/friends_page.dart';
-import 'package:splitwise/groups_page.dart';
+import 'package:splitwise/pages/account_page.dart';
+import 'package:splitwise/pages/activity_page.dart';
+import 'package:splitwise/pages/add_page.dart';
+import 'package:splitwise/pages/friends_page.dart';
+import 'package:splitwise/pages/groups_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

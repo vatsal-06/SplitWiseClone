@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'global_variables.dart';
 import 'friends_settings_page.dart';
 
 class FriendsDetailsPage extends StatefulWidget {
@@ -94,7 +93,6 @@ class _FriendsDetailsPageState extends State<FriendsDetailsPage> {
               ],
             ),
           ),
-          const SizedBox(height: 20),
         ],
       ),
     );

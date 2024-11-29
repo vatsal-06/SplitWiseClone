@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:splitwise/global_variables.dart';
 
 class FriendsSettingsPage extends StatelessWidget {
   final Map<String, dynamic> people;
@@ -20,7 +19,7 @@ class FriendsSettingsPage extends StatelessWidget {
           Row(
             children: [
               const Icon(Icons.person),
-              // Text(people['name'] as String, style: Theme.of(context).textTheme.titleMedium),
+              Text(people['name'] as String, style: Theme.of(context).textTheme.titleMedium),
             ],
           )
         ],

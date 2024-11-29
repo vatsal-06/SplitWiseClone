@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:splitwise/test_page.dart';
-import 'account_settings.dart';
+import 'package:splitwise/pages/test_page.dart';
+import '../widgets/account_settings.dart';
 
 class AccountPage extends StatefulWidget {
   final Map<String, dynamic> people;
@@ -246,10 +246,23 @@ class _AccountPageState extends State<AccountPage> {
                               builder: (context) => const TestPage()));
                     });
                   },
-                  child: const Text('Log out', style: TextStyle(fontSize: 12, color: Colors.green),),
+                  child: const Text('Log out', style: TextStyle(fontSize: 12, color: Color.fromRGBO(28, 139, 113, 1)),),
                 ),
               ),
-              )
+              ),
+
+              const SizedBox(height: 20),
+
+              Center(
+                child: Text('''Made with :) in Thapar Institute, Patiala 
+              Copyright © 2024 MLSC''',
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+              ),
+
+              const SizedBox(height: 20),
+
+              Center(child: Text('1.1.0/1', style: Theme.of(context).textTheme.bodySmall,))
             ],
           ),
         ),

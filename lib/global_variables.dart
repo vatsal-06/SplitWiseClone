@@ -29,3 +29,14 @@ final List people = [
     'expense': 'You owe \$400'
   }
 ];
+
+final List groups = [
+  {
+    'id': 0,
+    'groupName': 'Pizza',
+    'expenses': 'You owe \$100',
+  },
+  {
+    
+  }
+];

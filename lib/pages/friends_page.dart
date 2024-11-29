@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'friends_item.dart';
-import 'global_variables.dart';
+import '../widgets/friends_item.dart';
+import '../global_variables.dart';
 import 'friends_details_page.dart';
 
 class FriendsPage extends StatefulWidget {
@@ -89,7 +89,7 @@ class _FriendsPageState extends State<FriendsPage> {
       
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(250, 50),
+                minimumSize: const Size(250, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
